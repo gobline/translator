@@ -161,36 +161,6 @@ class Translator implements TranslatorInterface
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function hasTranslations($language)
-    {
-        if (isset($this->translations[$language])) {
-            return true;
-        }
-
-        if (isset($this->files[$language])) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getTranslations($language)
-    {
-        if (!$this->hasTranslations($language)) {
-            throw new \RuntimeException('No translations found for language "'.$language.'"');
-        }
-
-        $this->loadTranslations($language);
-
-        return $this->translations[$language];
-    }
-
-    /**
      * @param string $s
      *
      * @return string
