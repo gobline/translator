@@ -17,29 +17,6 @@ namespace Mendo\Translator;
 interface TranslatorInterface
 {
     /**
-     * @param string $language
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function setDefaultLanguage($language);
-
-    /**
-     * @param string $path
-     * @param string $language
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function addTranslationFile($path, $language);
-
-    /**
-     * @param array  $translations
-     * @param string $language
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function addTranslationArray(array $translations, $language);
-
-    /**
      * @param string       $str
      * @param array|string $params
      * @param string       $language
@@ -50,18 +27,4 @@ interface TranslatorInterface
      * @return string
      */
     public function translate($str, $params = null, $language = null);
-
-    /**
-     * @param string $language
-     *
-     * @return string[]
-     */
-    public function getTranslations($language);
-
-    /**
-     * @param string $language
-     *
-     * @return bool
-     */
-    public function hasTranslations($language);
 }
