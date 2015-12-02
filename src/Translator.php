@@ -21,7 +21,9 @@ class Translator implements TranslatorInterface
     private $defaultLanguage;
 
     /**
-     * {@inheritdoc}
+     * @param string $language
+     *
+     * @throws \InvalidArgumentException
      */
     public function setDefaultLanguage($language)
     {
@@ -34,7 +36,33 @@ class Translator implements TranslatorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @param array $files
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function setTranslationFiles(array $files)
+    {
+        foreach ($files as $language => $files) {
+            $language = (string) $language;
+            if ($language === '') {
+                throw new \InvalidArgumentException('$language cannot be empty');
+            }
+
+            foreach ($file as $file) {
+                if (!file_exists($file)) {
+                    throw new \InvalidArgumentException('Translation file "'.$file.'" not found');
+                }
+
+                $this->files[$language][] = $file;
+            }
+        }
+    }
+
+    /**
+     * @param string $path
+     * @param string $language
+     *
+     * @throws \InvalidArgumentException
      */
     public function addTranslationFile($path, $language)
     {
@@ -51,7 +79,10 @@ class Translator implements TranslatorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @param array  $translations
+     * @param string $language
+     *
+     * @throws \InvalidArgumentException
      */
     public function addTranslationArray(array $translations, $language)
     {
