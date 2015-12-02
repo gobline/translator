@@ -1,6 +1,6 @@
 {
-    "name": "mendoframework/translator",
-    "description": "Mendo Translator Component",
+    "name": "gobline/translator",
+    "description": "Translator component",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -9,14 +9,14 @@
         }
     ],
     "keywords": [
-        "mf", "mendoframework", "mendo framework",
+        "gobline", 
         "translator", "translate",
         "i18n", "internationalization"
     ],
-    "homepage": "https://github.com/mendoframework",
+    "homepage": "https://github.com/gobline",
     "autoload": {
         "psr-4": {
-            "Mendo\\Translator\\": "src/"
+            "Gobline\\Translator\\": "src/"
         }
     },
     "require": {

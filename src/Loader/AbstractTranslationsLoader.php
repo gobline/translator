@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Mendo Framework
+ * Gobline Framework
  *
  * (c) Mathieu Decaffmeyer <mdecaffmeyer@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Mendo\Translator\Loader;
+namespace Gobline\Translator\Loader;
 
 /**
  * @author Mathieu Decaffmeyer <mdecaffmeyer@gmail.com>

@@ -1,11 +1,11 @@
-# Translator Component - Mendo Framework
+# Translator component
 
-The Mendo Translator component aids in building multilingual applications.
+The Translator component aids in building multilingual applications.
 
 ## Creating the Translator
 
 ```php
-$translator = new Mendo\Translator\Translator();
+$translator = new Gobline\Translator\Translator();
 ```
 
 ## Adding a Translation File
@@ -48,9 +48,9 @@ $translator->translate('User %1 %2 created', ['John', 'Smith']); // returns "Uti
 
 ## Installation
 
-You can install Mendo Translator using the dependency management tool [Composer](https://getcomposer.org/).
+You can install the Translator component using the dependency management tool [Composer](https://getcomposer.org/).
 Run the *require* command to resolve and download the dependencies:
 
 ```
-composer require mendoframework/translate
+composer require gobline/translate
 ```
