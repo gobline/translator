@@ -123,7 +123,7 @@ class Translator implements TranslatorInterface
         if ($params) {
             if (is_array($params)) {
                 foreach ($params as $k => $param) {
-                    $str = str_replace('%'.($k+1), $param, $str);
+                    $str = str_replace('%'.($k + 1), $param, $str);
                 }
             } else {
                 $str = str_replace('%1', $params, $str);
