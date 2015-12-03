@@ -41,17 +41,6 @@ class TranslatorTest extends PHPUnit_Framework_TestCase
         $this->assertSame('Utilisateur John Smith créé', $this->translator->translate('User %1 %2 created', ['John', 'Smith']));
     }
 
-    public function testTranslatorHasTranslations()
-    {
-        $this->assertTrue($this->translator->hasTranslations('fr'));
-        $this->assertTrue($this->translator->hasTranslations('de'));
-    }
-
-    public function testTranslatorHasNotTranslations()
-    {
-        $this->assertFalse($this->translator->hasTranslations('it'));
-    }
-
     public function testTranslatorAddTranslationFileNonExistent()
     {
         $this->setExpectedException('\InvalidArgumentException', 'not found');
