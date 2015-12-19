@@ -42,13 +42,17 @@ class Translator implements TranslatorInterface
      */
     public function setTranslationFiles(array $files)
     {
-        foreach ($files as $language => $files) {
+        foreach ($files as $language => $languageFiles) {
             $language = (string) $language;
             if ($language === '') {
                 throw new \InvalidArgumentException('$language cannot be empty');
             }
 
-            foreach ($file as $file) {
+            if (!is_array($languageFiles)) {
+                $languageFiles = [$languageFiles];
+            }
+
+            foreach ($languageFiles as $file) {
                 if (!file_exists($file)) {
                     throw new \InvalidArgumentException('Translation file "'.$file.'" not found');
                 }
